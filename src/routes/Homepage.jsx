@@ -18,11 +18,11 @@ const Homepage = () => {
       <div className="flex items-center justify-between ">
         {/* titles */}
         <div className="">
-          <h1 className="text-gray-800 text-2xl md:text-5xl lg:text-6xl font-bold ">Em dao nay co con xem phim mot minh?</h1>
-          <p className="mt-8 text-md md:text-xl ">Hoi em toi xin lam con cho', bay  theo em ve noi co bong em toi luon cho noi do nghe em</p>
+          <h1 className="text-green-800 text-2xl md:text-5xl lg:text-6xl font-bold ">Green live MATTER!</h1>
+          <p className="mt-8 text-md md:text-xl ">This is a blog website combine with AI detect your plant's health</p>
         </div>
       {/* animated-button */}
-     <Link to="write" className=" flex-col items-center gap-8 w-[300px] hidden md:flex relative">
+     <Link to="Scanner" className=" flex-col items-center gap-8 w-[300px] hidden md:flex relative">
   <div className="w-[250px] h-[250px]">
     <Lottie animationData={plantScanning} loop={true} />
   </div>

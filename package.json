@@ -11,12 +11,19 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.38.1",
+    "@tanstack/react-query": "^5.85.3",
+    "axios": "^1.11.0",
+    "framer-motion": "^12.23.12",
     "imagekitio-react": "^4.3.0",
     "lottie-react": "^2.4.1",
+    "lucide-react": "^0.539.0",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-quill-new": "^3.6.0",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "react-toastify": "^11.0.5",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
