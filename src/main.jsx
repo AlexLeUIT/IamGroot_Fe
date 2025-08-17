@@ -14,7 +14,13 @@ import SinglePostPage from './routes/SinglePostPage.jsx';
 import Scanner from './routes/Scanner.jsx';
 import MainLayout from './layouts/MainLayout.jsx';
 import { ClerkProvider } from '@clerk/clerk-react'
-
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery
+} from '@tanstack/react-query'
+import {ToastContainer} from 'react-toastify';
+const queryClient = new QueryClient()
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!publishableKey) {
@@ -60,7 +66,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={publishableKey}>
+      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      <ToastContainer position="bottom-right"/>
+      </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,
 )

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const fetchComments = async (postId) => {
   const res = await axios.get(
-    `${import.meta.env.VITE_API_URL}/comments/${postId}`
+    `${import.meta.env.VITE_API_URL}/api/comments/${postId}`
   );
   return res.data;
 };
@@ -26,11 +26,11 @@ const Comments = ({ postId }) => {
     mutationFn: async (newComment) => {
       const token = await getToken();
       return axios.post(
-        `${import.meta.env.VITE_API_URL}/comments/${postId}`,
+        `${import.meta.env.VITE_API_URL}/api/comments/${postId}`,
         newComment,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `${token}`,
           },
         }
       );
@@ -48,7 +48,7 @@ const Comments = ({ postId }) => {
     const formData = new FormData(e.target);
 
     const data = {
-      desc: formData.get("desc"),
+      content: formData.get("desc"),
     };
 
     mutation.mutate(data);
@@ -56,7 +56,7 @@ const Comments = ({ postId }) => {
 
   return (
     <div className="flex flex-col gap-8 lg:w-3/5 mb-12">
-      <h1 className="text-xl text-gray-500 underline">Comments</h1>
+      <h1 className="text-xl text-violet-dark">Comments</h1>
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-between gap-8 w-full"
@@ -64,9 +64,9 @@ const Comments = ({ postId }) => {
         <textarea
           name="desc"
           placeholder="Write a comment..."
-          className="w-full p-4 rounded-xl"
+          className="w-full p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-base focus:ring-opacity-80"
         />
-        <button className="bg-blue-800 px-4 py-3 text-white font-medium rounded-xl">
+        <button className="bg-violet-base px-4 py-2 text-yellow-light border-violet-dark border-2 shadow-hard shadow-violet-dark font-medium rounded-xl">
           Send
         </button>
       </form>
