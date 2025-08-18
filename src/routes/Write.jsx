@@ -62,7 +62,6 @@ const Write = () => {
       title: formData.get("title"),
       category: formData.get("category"),
       desc: formData.get("desc"),
-      img: cover.filePath || "",
       content: value,
     };
 
@@ -148,5 +147,6 @@ const Write = () => {
     </div>
   )
 }
+
 
 export default Write
