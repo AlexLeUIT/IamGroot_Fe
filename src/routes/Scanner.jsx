@@ -31,7 +31,7 @@ const Scanner = () => {
     setResult(null);
 
     try {
-      const res = await fetch("http://localhost:5000/classify", {
+      const res = await fetch("https://patient-pleased-cub.ngrok-free.app/classify", {
         method: "POST",
         body: formData,
       });
@@ -107,3 +107,4 @@ const Scanner = () => {
 };
 
 export default Scanner;
+
